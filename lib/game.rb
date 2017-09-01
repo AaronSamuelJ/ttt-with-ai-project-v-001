@@ -41,7 +41,19 @@ class Game
     self.board.valid_move?(user_input) ? self.board.update(user_input, self.current_player) : turn
   end
   def play
+    banner
     turn until over?
-    puts winner ? "Congratulations #{winner}!" : "Cat's Game!"
+    board.display
+    puts winner ? "Congratulations #{winner}!".red : "Cat's Game!".red
+  end
+  def banner
+    puts %q[
+    ___________ .__        __
+    \__    ___/ |__| _____/  |______    ____
+       |    |   |  |/ ___\   __\__  \ _/ ___\
+       |    |   |  \  \___|  |  / __ \  \___
+       |____|   |__|\___  >__| (____  /\___  >
+                        \/          \/     \/].blue
+    puts "Lets play Tic Tac Toe!"
   end
 end
