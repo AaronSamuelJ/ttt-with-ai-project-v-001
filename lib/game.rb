@@ -44,7 +44,7 @@ class Game
     banner
     turn until over?
     board.display
-    puts winner ? "Congratulations #{winner}!".red : "Cat's Game!".red
+    puts winner ? "Congratulations #{winner}!" : "Cat's Game!"
   end
   def banner
     puts %q[
